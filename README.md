@@ -1,3 +1,10 @@
+## Description
+
+This application is not intended to do stress test Hive with concurrency tests.
+
+The objective is to benchmark Hive-LLAP assisted queries vs Hive regular queries.
+
+Tested with environment: AWS EMR emr-5.23.0 (Amazon 2.8.5)
 
 ## Run EMR Slider LLAP Daemon
 
@@ -10,7 +17,6 @@
 You can check the Slider App logs here:
 
     /tmp/llap_configure_script.log
-
 
 
 ## Configure benchmark
