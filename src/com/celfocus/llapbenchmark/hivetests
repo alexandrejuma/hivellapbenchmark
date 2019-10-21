@@ -1,0 +1,6 @@
+1|Query Hbase table by rowkey (S3 backed).|select * from noc_operational_pt.hbs_alrm where id = '826dd0b8f108d8eb1f9b2d8c4bb25ea9'|select count(id) from noc_operational_pt.hbs_alrm where id = '826dd0b8f108d8eb1f9b2d8c4bb25ea9'|false
+2|Full scan of small table (Hive native table located in s3).|select * from date_dim|select count(*) from date_dim|false
+3|Optimized aggregation on a partitioned table (Hive native table located in s3).|select sum(ss_ext_list_price) as sold_value, sum(ss_quantity) as sold_qty from store_sales WHERE ss_sold_date_sk LIKE '245222%'|select count(*) from store_sales WHERE ss_sold_date_sk LIKE '245222%'|false
+4|Query Hbase table by rowkey (S3 backed).|select * from noc_operational_pt.hbs_alrm where id = '826dd0b8f108d8eb1f9b2d8c4bb25ea9'|select count(id) from noc_operational_pt.hbs_alrm where id = '826dd0b8f108d8eb1f9b2d8c4bb25ea9'|true
+5|Full scan of small table (Hive native table located in s3).|select * from date_dim|select count(*) from date_dim|true
+6|Optimized aggregation on a partitioned table (Hive native table located in s3).|select sum(ss_ext_list_price) as sold_value, sum(ss_quantity) as sold_qty from store_sales WHERE ss_sold_date_sk LIKE '245222%'|select count(*) from store_sales WHERE ss_sold_date_sk LIKE '245222%'|true
